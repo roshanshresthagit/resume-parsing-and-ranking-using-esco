@@ -1,0 +1,2110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:ns1="http://purl.org/dc/terms/"
+  xmlns:ns2="http://www.w3.org/2002/07/owl#"
+  xmlns:ns3="http://www.w3.org/2004/02/skos/core#"
+  xmlns:ns4="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+  xmlns:ns5="http://data.europa.eu/esco/model#"
+>
+  <ns2:AnnotationProperty rdf:about="http://data.europa.eu/esco/model#expirationNote">
+    <ns3:hitoryNote xml:lang="en">Deprecated with Model version 1.</ns3:hitoryNote>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <rdfs:seeAlso>
+      <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#expirationPeriod">
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+        <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Qualification"/>
+        <rdfs:comment xml:lang="en">Period how long a qualification is valid.
+
+Example: a qualification for aircraft pilot may be subject to hours flight and/or testing within a specified period in order to pro-long the qualification.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:label xml:lang="en">qualification expiration period</rdfs:label>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+      </ns2:DatatypeProperty>
+    </rdfs:seeAlso>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns3:definition xml:lang="en">A note documenting an expiry period or date</ns3:definition>
+    <rdfs:isDefinedBy>
+      <ns2:Ontology rdf:about="http://data.europa.eu/esco/model">
+        <ns2:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</ns2:versionInfo>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-08</ns1:modified>
+        <ns1:contributor>Massimiliano Molinari (DG-EMPL, Reviewer)</ns1:contributor>
+        <ns1:contributor>Martin Le Vrang (DG-EMPL, Approver)</ns1:contributor>
+        <ns1:contributor>Agis Papantoniou (TenForce)</ns1:contributor>
+        <ns1:title xml:lang="en">The ESCO ontology</ns1:title>
+        <ns2:imports rdf:resource="http://data.europa.eu/esco/flow"/>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-10-23</ns1:modified>
+        <ns2:imports rdf:resource="http://data.europa.eu/esco/skos2"/>
+        <ns1:creator>Johan De Smedt (TenForce)</ns1:creator>
+        <ns1:contributor>Pieter Fannes (TenForce)</ns1:contributor>
+        <rdfs:comment xml:lang="en">The ontology of the taxonomy "European Skills, Competences, qualifications and Occupations".
+
+The ontology considers three ESCO pillars (or taxonomy) and 2 registers.
+The three pillars are:
+- Occupation
+- Skill (and competences)
+- Qualification
+
+For the construction and use of the ESCO pillars, the following modelling artefacts are used:
+- Facetting support to specialize ESCO pillar concepts based on bussiness relevant Concept Groups (e.g. species, languages, ...)
+- Conept Groups, Thesaurus array and Compound terms (as detailed in ISO 25964) to organize faceted concepts
+- SKOS mapping properties to relate ESCO pillar concepts to concepts in other (external) taxonomies (e.g. FoET, ISCO88 and ISCO08.  More mappings can be added in the future.)
+- Tagging ESCO pillar concepts by other (external) taxonomies (NUTS, EQF, NACE, ...)
+- Capture gender specifics on the labels of the ESCO pillar concepts
+- Rich ESCO concept relationships holding a description and other specific characteristics of the relation between two ESCO pillar concepts.
+
+ESCO maintains two additional registers:
+- Awarding Body
+- Work Context
+Awarding Bodies typically are referenced by ESCO qualifications.
+Occupations can have one or more work context.</rdfs:comment>
+        <ns2:imports rdf:resource="http://purl.org/iso25964/skos-thes"/>
+      </ns2:Ontology>
+    </rdfs:isDefinedBy>
+    <ns3:changeNote xml:lang="en">ESCO v0 -&gt; ESCO v1.
+Should be part of http://www.w3.org/2004/02/skos/core#definition.
+An expiration period typically should be given formaly by the "xsd:duration" typed property http://data.europa.eu/esco/model#expirationPeriod
+
+ESCO v0 has expiration notes on 3 qualifications (also having a definition).  These expiration notes need to be appended to the respective definition note.by:
+- add two line breaks
+- add the expiration note.
+The formal property esco:expirationPeriod needs to be set manually to express a duration.</ns3:changeNote>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+    <rdfs:label xml:lang="en">ESCO expiration note</rdfs:label>
+  </ns2:AnnotationProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#ISCO88Code">
+    <ns3:changeNote xml:lang="en">ESCO v0 -&gt; ESCO v1 must create http://data.europa.eu/esco/model#memberOfISCOGroup (esco:memberOfISCOGroup a sub-property of skos:broadMatch) based on the detailed list of ISCO codes.
+Read also change note on: http://data.europa.eu/esco/ConceptScheme/ISCO2008
+
+Esco v0 has 4761 statements.</ns3:changeNote>
+    <rdfs:seeAlso>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#memberOfISCOGroup">
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <rdfs:comment xml:lang="en">The direct hierarchical broader ISCO concept of the (subject) ESCO occupation.
+The 'direct' (or one step) relationship is to be understood in terms of extending the ISCO taxonomy the (object) concept belongs to.
+
+The ISCO concept may be of any ISCO version.  The ISCO version can be determined by the inScheme property on the ISCO concept and the version information on the ISCO concept scheme (referenced by the object - i.e. by the ISCO concept).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broadMatch"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <rdfs:label xml:lang="en">belongs to ISCO Group with code</rdfs:label>
+      </ns2:ObjectProperty>
+    </rdfs:seeAlso>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:subPropertyOf>
+      <ns2:ObjectProperty rdf:about="http://purl.org/dc/terms/subject">
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <rdfs:comment xml:lang="en-us">The topic of the resource.</rdfs:comment>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <ns3:note xml:lang="en-us">This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration.</ns3:note>
+        <ns1:description xml:lang="en-us">Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary. To describe the spatial or temporal topic of the resource, use the Coverage element.</ns1:description>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:label xml:lang="en-us">subject</rdfs:label>
+      </ns2:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:label xml:lang="en">ISCO88 Code</rdfs:label>
+    <ns3:historyNote xml:lang="en">Deprecated with Model version 1.</ns3:historyNote>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/ConceptScheme/ISCO2008"/>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <rdfs:comment xml:lang="en"><![CDATA[The parent ISCO 88 codes of a specific occupation.
+The format is ''<code>[,<code>]*''^^xsd:string
+
+e.g ''3139,3131''^^xsd:string  means the occupation has 2 parent occupation groups in isco88. One with iscocode 3139 and one with iscocode 3131]]></rdfs:comment>
+  </ns2:ObjectProperty>
+  <ns2:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/nick">
+    <rdfs:label xml:lang="en">nickname</rdfs:label>
+    <rdfs:comment xml:lang="en">A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames).</rdfs:comment>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testing</ns4:term_status>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  </ns2:DatatypeProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#supportedLanguage">
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Language"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#ConceptScheme"/>
+    <rdfs:comment xml:lang="en">Denotes a description of the languages supported by the (subject) concept scheme.
+Required for ESCO taxonomy or thesauri.</rdfs:comment>
+    <rdfs:label xml:lang="en">supported language</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+  </ns2:ObjectProperty>
+  <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#awardingBodyDescription">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <rdfs:comment xml:lang="en">An awarding body provided using a descriptive text.
+A more precise definition of an awarding body known by ESCO can be given using http://data.europa.eu/esco/model#hasAwardingBody</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Qualification"/>
+    <rdfs:label xml:lang="en">awarding body (descriptive)</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+  </ns2:DatatypeProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#narrowerInstance">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#MemberConcept"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/iso25964/skos-thes#narrowerInstantial"/>
+    <rdfs:comment xml:lang="en">The ESCO concepts (occupation, skill or qualification) that are immediate (one step) narrower concepts of the (subject) leaf group.  These narrower concepts are top level (member) concepts of the subject leaf concept group.
+
+The (subject) leaf group may have more members, not provided by its esco:narrowerInstance properties.  Typically, these other members are specializations (e.g. faceted concepts) of the top level members of the (subject) leaf concept group.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasGroupMember">
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+        <rdfs:label xml:lang="en">has group member</rdfs:label>
+        <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#GroupConcept"/>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <ns2:inverseOf rdf:resource="http://data.europa.eu/esco/model#memberOfGroup"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrowerTransitive"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#MemberConcept"/>
+        <rdfs:comment xml:lang="en">Identifies the member Concept of the (subject) Group concept.</rdfs:comment>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+      </ns2:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#SimpleConcept"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#LeafGroupConcept"/>
+    <ns2:inverseOf>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#broaderInstance">
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+        <rdfs:label xml:lang="en">broader instance</rdfs:label>
+        <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#SimpleConcept"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/iso25964/skos-thes#broaderInstantial"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#LeafGroupConcept"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.europa.eu/esco/model#memberOfGroup"/>
+        <rdfs:comment xml:lang="en">The Leaf Group the (subject) ESCO member concept (Skill or Occupation or Qualification) belongs to.
+Only member properties having a Leaf Group type as broader concept must have this property,  Specializations of member concepts (like Faceted Concepts) do not have this property.</rdfs:comment>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+        <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#MemberConcept"/>
+      </ns2:ObjectProperty>
+    </ns2:inverseOf>
+    <rdfs:label xml:lang="en">narrower instance</rdfs:label>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+  </ns2:ObjectProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#SectorBreakDownConcept">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:modified>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:label xml:lang="en">ESCO concept used for sector breakdown.</rdfs:label>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:issued>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <rdfs:comment xml:lang="en">A sector breakdown concept can be used in the Occupation and in the Skill/Competences pillar to organize navigation.  As such, it may be related (or characterize) a group of occupations as well as a group of skills.
+It is not an industry sector, but it may be tagged with NACE codes.
+
+This notion is specifically used for organizing the ESCO thesaurus creation (cfr. ESCO v1 methdology and SREF groups).</rdfs:comment>
+  </ns2:Class>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasDivisionCharacteristic">
+    <rdfs:seeAlso rdf:resource="http://purl.org/iso25964/skos-thes#superOrdinate"/>
+    <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#ThesaurusArray"/>
+    <rdfs:seeAlso>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#facet">
+        <rdfs:domain>
+          <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b54">
+            <ns2:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+              <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+            </ns2:unionOf>
+          </ns2:Class>
+        </rdfs:domain>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <rdfs:comment xml:lang="en">The facet concept group, a group of concepts used to expand:
+- the subject (ESCO) concept
+  or
+- all the members concepts of the subject Collection
+to build ESCO (compound) faceted concepts.
+
+An ESCO concept may have different aspects or facets that can specialize the ESCO concept.
+A well known example is the (foreign) language skills.
+- the main aspect of the (foreign) language skill is the identification of the foreign language
+  The specialized concepts thus constructed are:
+   - (foreign) language skill Albanian,
+   - (foreign) labguage skill Bulgarian,
+   - ...
+- the (main) facet (e.g. a set of languages) occasional is extended by (sub-) facets that can be added. E.g. a (sub-) facet of language (skill) are the specialized levels defined by CEFR writing, understanding interactively, ...)
+
+The relationship between facet groups (in the example above "language" and "CEFR language skill level" can be made 2-way (from "language" to "language skill level" and the inverse). In addition, the "(foreign) language skill" can have as facet (i.e. be specialized) by as well "language" as by "CEFR language skill level".  As a result, the ESCO concept "(foreign) language skill" can be specialized in two different ways:
+- first by language then by language skill level
+  or
+- first by language skill level then by language
+Both navigation hierarchies ultimatly hold the same set of (compound) faceted concepts (e.g. "(foreign) language skill" "writing" "Bulgarian".
+In general:
+- concept
+- - &amp;lt;concept by facet group 1&amp;gt;
+- - - [concept + facet group 1 member]
+- - - - &amp;lt;[concept + facet group 1 member] by facet group 2&amp;gt;
+- - - - - [concept + facet group 1 member + facet group 2 member]
+- - - - - ... (other facet group 2 members)
+- - - ... (other facet group 1 members)
+- - &amp;lt;concept by facet group 2&amp;gt;
+- - - [concept + facet group 2 member]
+- - - - &amp;lt;[concept + facet group 2 member] by facet group 1&amp;gt;
+- - - - - [concept + facet group 2 member + facet group 1 member]
+- - - - - ... (other facet group 1 members)
+- - - ... (other facet group 2 members)</rdfs:comment>
+        <rdfs:label xml:lang="en">specializing facet</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:modified>
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#FacetConceptGroup"/>
+      </ns2:ObjectProperty>
+    </rdfs:seeAlso>
+    <rdfs:comment xml:lang="en">The ESCO facet group the thesaurus array is being built from.
+
+When an ESCO concept is specialized by a facet group, the ESCO thesaurus introduces that set (or branch) of specializations with a Thesaurus.Array.
+
+Example: The occupation "Teacher" can be specialized by 'education level' or by 'education subject'.
+At concept development time this is typically specified with respective esco:facet properties, one identifying the facet-group for education level, anoher identifying the facet-group holding the instructed subject areas.
+At concept publication time, each specializing facet will be represented as an iso-thes:ThesaurusArray having as members the (compound) faceted concepts.
+For each ESCO thesaurus array this property (esco:hasDivisionCharacteristic) recalls the FacetGroup it was created for.
+
+Note: Complementary to esco:hasDivisionCharacteristic the iso-thes:superOrdinate identifies the ESCO member concept used to create the faceted concepts that are members of the thesaurus array.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#FacetConceptGroup"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-03-07</ns1:issued>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:label xml:lang="en">division characteristic</rdfs:label>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-03-07</ns1:modified>
+  </ns2:ObjectProperty>
+  <ns2:AnnotationProperty rdf:about="http://data.europa.eu/esco/model#regulatedProfessionNote">
+    <rdfs:label xml:lang="en">regultated profession note</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Occupation"/>
+    <rdfs:comment xml:lang="en">The subject occupation is regulated according the description in the note.  The note typically contains a hyperlink.</rdfs:comment>
+    <ns4:term_status>proposed</ns4:term_status>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-26</ns1:modified>
+  </ns2:AnnotationProperty>
+  <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#isoCountryCodeA3">
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Country"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#NMTOKEN"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:label xml:lang="en">country code (A3)</rdfs:label>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:comment xml:lang="en">ISO 3166 country code - A3</rdfs:comment>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+  </ns2:DatatypeProperty>
+  <ns2:AnnotationProperty rdf:about="http://data.europa.eu/esco/model#sortString">
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-08</ns1:modified>
+    <rdfs:label xml:lang="en">sorting string</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.org/iso25964/skos-thes#subordinateArray"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-08</ns1:issued>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment xml:lang="en">The formatted string used to establish sorting among concepts.
+Deprecated by use of skos:OrderedCollection and iso-thes:subordinateArray</rdfs:comment>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+  </ns2:AnnotationProperty>
+  <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#noteLiteral">
+    <rdfs:label xml:lang="en">note text</rdfs:label>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns5:rule rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Embedded hyperlinks need to be parsed and validated on import.
+Content needs to be XHTML validated on import.</ns5:rule>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/model#language</rdfs:seeAlso>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:comment xml:lang="en">An xml literal taking a plain text or xhtml.body.type content type.
+
+The property typically allows to validate the content of a SKOS note (or any of its SKOS sub-properties).
+Notes are then provided as blank nodes with this property and with the ESCO language property.
+
+The motivations for this complex approach are:
+- Provides structure content (XML literal) according a format that can be validated.
+- xml:lang and rdf:parseType="Literal" can not be provided on the same property.</rdfs:comment>
+  </ns2:DatatypeProperty>
+  <ns2:FunctionalProperty rdf:about="http://data.europa.eu/esco/model#hasPolyHierarchy">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:comment xml:lang="en">true: Indicates wether a ESCO thesaurus/taxonomy supports poly-hierarchy. Not present or false indicate mono-hierarchy.</rdfs:comment>
+    <rdfs:label xml:lang="en">has poly-hierarchy</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#ConceptScheme"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </ns2:FunctionalProperty>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/Notation/NACEr2.section">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </rdfs:Datatype>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#relatedQualification">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Qualification"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:label xml:lang="en">qualification</rdfs:label>
+    <rdfs:comment xml:lang="en">The ESCO qualification (certification) that is required for the subject occupation or skill.</rdfs:comment>
+    <rdfs:domain>
+      <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b74">
+        <ns2:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Occupation"/>
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Skill"/>
+        </ns2:unionOf>
+      </ns2:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+  </ns2:ObjectProperty>
+  <ns2:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testing</ns4:term_status>
+    <rdfs:comment xml:lang="en">A name for an agent.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdfs:label xml:lang="en">name</rdfs:label>
+  </ns2:DatatypeProperty>
+  <ns2:AnnotationProperty rdf:about="http://purl.org/dc/terms/created">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:label xml:lang="en">Date Created</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:comment xml:lang="en">Date of creation of the resource.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+  </ns2:AnnotationProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#isEssentialSkillFor">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <ns2:inverseOf>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#relatedEssentialSkill">
+        <rdfs:label xml:lang="en">has essential skill</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+        <rdfs:domain>
+          <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b68">
+            <ns2:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://data.europa.eu/esco/model#Occupation"/>
+              <rdf:Description rdf:about="http://data.europa.eu/esco/model#Skill"/>
+            </ns2:unionOf>
+          </ns2:Class>
+        </rdfs:domain>
+        <rdfs:comment xml:lang="en">The ESCO skill or competence that is essential for the subject occupation or skill.</rdfs:comment>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+      </ns2:ObjectProperty>
+    </ns2:inverseOf>
+    <rdfs:comment xml:lang="en">The inverse of esco:relatedEssentialSkill.</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:modified>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:range>
+      <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b71">
+        <ns2:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Occupation"/>
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Skill"/>
+        </ns2:unionOf>
+      </ns2:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">is essential skill for</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:issued>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+  </ns2:ObjectProperty>
+  <ns2:AnnotationProperty rdf:about="http://data.europa.eu/esco/model#learningOutcomeNote">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <ns3:historyNote xml:lang="en">Deprecated with Model version 1.</ns3:historyNote>
+    <ns3:changeNote xml:lang="en">The deprecated note must be transferred.
+- either be part of the definition (http://www.w3.org/2004/02/skos/core#definition) of the subject
+- or be part of the ESCO relationship (see http://data.europa.eu/esco/model#Relationship) providing the description of the subject.
+
+ESCOv0 -&gt; ESCOv
+ESCO v0 has two (subject) Qualification concepts with a learningOutcome Note (and no definition note).
+On conversion to ESCOv1 model, these should be replaced by a http://www.w3.org/2004/02/skos/core#definition</ns3:changeNote>
+    <rdfs:comment xml:lang="en">a note documenting the learning outcomes.</rdfs:comment>
+    <rdfs:label xml:lang="en">editorial note</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+  </ns2:AnnotationProperty>
+  <ns2:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-05</ns1:modified>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:label xml:lang="en">model axiom or term status</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype rdf:about="http://data.europa.eu/esco/model#termStatusDataType">
+        <ns4:term_status>proposed</ns4:term_status>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:comment xml:lang="en">list of status values used for managing ESCO ontology changes.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">term status type</rdfs:label>
+        <ns2:equivalentClass>
+          <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b27">
+            <ns2:unionOf rdf:parseType="Collection">
+              <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b29">
+                <ns2:withRestrictions rdf:parseType="Collection">
+                  <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b31">
+                    <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">approved</xsd:pattern>
+                  </rdf:Description>
+                </ns2:withRestrictions>
+                <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+              </rdfs:Datatype>
+              <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b33">
+                <ns2:withRestrictions rdf:parseType="Collection">
+                  <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b35">
+                    <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prepared</xsd:pattern>
+                  </rdf:Description>
+                </ns2:withRestrictions>
+                <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+              </rdfs:Datatype>
+              <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b37">
+                <ns2:withRestrictions rdf:parseType="Collection">
+                  <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b39">
+                    <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</xsd:pattern>
+                  </rdf:Description>
+                </ns2:withRestrictions>
+                <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+              </rdfs:Datatype>
+              <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b41">
+                <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <ns2:withRestrictions rdf:parseType="Collection">
+                  <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b43">
+                    <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rejected</xsd:pattern>
+                  </rdf:Description>
+                </ns2:withRestrictions>
+              </rdfs:Datatype>
+              <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b45">
+                <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <ns2:withRestrictions rdf:parseType="Collection">
+                  <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b47">
+                    <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</xsd:pattern>
+                  </rdf:Description>
+                </ns2:withRestrictions>
+              </rdfs:Datatype>
+              <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b49">
+                <ns2:withRestrictions rdf:parseType="Collection">
+                  <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b51">
+                    <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">to be reviewed</xsd:pattern>
+                  </rdf:Description>
+                </ns2:withRestrictions>
+                <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+              </rdfs:Datatype>
+            </ns2:unionOf>
+          </rdfs:Datatype>
+        </ns2:equivalentClass>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013-12-05</ns1:modified>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-05</ns1:issued>
+  </ns2:AnnotationProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasAwardingBody">
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns4:term_status>released</ns4:term_status>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:label xml:lang="en">has awarding body</rdfs:label>
+    <rdfs:comment xml:lang="en">The institutiution, organisation or company that issues the (subject) qualification (certification).</rdfs:comment>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#AwardingBody"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </ns2:ObjectProperty>
+  <ns2:AnnotationProperty rdf:about="http://data.europa.eu/esco/model#iscoLabel">
+    <rdfs:label xml:lang="en">isco label</rdfs:label>
+    <rdfs:comment xml:lang="en">The ISCO label of an occupation group.
+Provided in case the preferred label has been replaced by an esco specific one.
+
+Typically this can happen in order not to have duplicate preferred labels in the ESCO thesaurus.</rdfs:comment>
+    <ns4:term_status>rejected</ns4:term_status>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <ns5:rule rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There may be at most 1 iscoLabel per language for any OcupationGroup.</ns5:rule>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <ns3:historyNote xml:lang="en">Deprecated with Model version 1.</ns3:historyNote>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/ConceptScheme/ISCO2008"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:seeAlso>
+      <ns2:AnnotationProperty rdf:about="http://data.europa.eu/esco/model#originalLabel">
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <ns5:rule rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There may be at most 1 originalLabel per language for any Concept.</ns5:rule>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+        <rdfs:comment xml:lang="en">The original label of a concept of a support taxonomy.
+Provided in case the preferred label has been replaced by an ESCO specific one.
+
+Typically used on arguable names for exceptional concepts like 'Country'</rdfs:comment>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+        <ns4:term_status>proposed</ns4:term_status>
+        <rdfs:label xml:lang="en">original label</rdfs:label>
+      </ns2:AnnotationProperty>
+    </rdfs:seeAlso>
+    <ns3:changeNote xml:lang="en">Generalized and replaced by: http://data.europa.eu/esco/model#originalLabel
+
+ESCO v0 -&gt; ESCO v1 (read also change note on: http://data.europa.eu/esco/ConceptScheme/ISCO2008)
+The ESCOv1 (= v0.0) concepts (that are a copy of ISCO2008 concepts) should keep existing label in ESCOv0 and iscoLabel is removed.
+The ISCO2008 concepts should keep the preferred label (per language) the property esco:iscoLabel is replaced by the property esco:originalLabel (http://data.europa.eu/esco/model#originalLabel)
+
+Conversion needs to convert the existing ISCO labels in two ways:
+- as esco:iscoLabel which MAY NOT be modified (READ-ONLY)
+- as xl:label where ESCO can overrule the terminology from ISCO to conform to SKOS label requirements.</ns3:changeNote>
+  </ns2:AnnotationProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#relatedCompetence">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:modified>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+    <rdfs:comment xml:lang="en">The ESCO skill/competence related to (or asserted by) the subject ESCO qualification.
+I.e. when asserted on a subject qualification, the related competence is a learning outcome of that qualification.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Qualification"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:label xml:lang="en">competence</rdfs:label>
+  </ns2:ObjectProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasWorkContext">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <ns4:term_status>proposed</ns4:term_status>
+    <rdfs:label xml:lang="en">can have work context</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:issued>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#WorkContext"/>
+    <rdfs:comment xml:lang="en">The possible working context of the (subject) occupation.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:modified>
+  </ns2:ObjectProperty>
+  <ns2:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/phone">
+    <rdfs:comment xml:lang="en">A phone, specified using fully qualified tel: URI scheme "tel:+##...##" - see http://www.ietf.org/rfc/rfc2806.txt.</rdfs:comment>
+    <rdfs:label xml:lang="en">phone</rdfs:label>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testing</ns4:term_status>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  </ns2:DatatypeProperty>
+  <ns2:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member">
+    <rdfs:label xml:lang="en">member</rdfs:label>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ns4:term_status>
+    <rdfs:comment xml:lang="en">Indicates a member of a Group</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </ns2:ObjectProperty>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/Notation/FoET2013">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </rdfs:Datatype>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasEQFLevel">
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#EQFLevel"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns4:term_status>released</ns4:term_status>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:label xml:lang="en">has EQF Level</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdfs:comment xml:lang="en">The level (as specified by the European Qualification Framework) applicable to the subject qualification.</rdfs:comment>
+  </ns2:ObjectProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasFoETCode">
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#FoETCode"/>
+    <rdfs:comment xml:lang="en">A tagging concept identifying the Field of Education Code as specified by the UNESCO Institute for Statistics (UIS).</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:label xml:lang="en">has FoET Code</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <ns4:term_status>proposed</ns4:term_status>
+  </ns2:ObjectProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#OverlappingSkillGroup">
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b98">
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/ESCO_Skills"/>
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:issued>
+    <rdfs:label xml:lang="en">Group of overlapping skills</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:comment xml:lang="en">The class of collections of overlapping esco:Skill concepts. All skills within one collection of overlapping skills have overlapping semantics with each other.
+
+The collection has a name using http://www.w3.org/2004/02/skos/core#prefLabel .
+
+As clarifications about the overlapping emerge, a decision from ESCO editorial team may instruct to merge some or all of the member concepts of this collection or to relate its members in another way.</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:modified>
+  </ns2:Class>
+  <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#relevantURL">
+    <rdfs:label xml:lang="en">relevant URL</rdfs:label>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:domain>
+      <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b86">
+        <ns2:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Label"/>
+          <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+        </ns2:unionOf>
+      </ns2:Class>
+    </rdfs:domain>
+    <rdfs:comment xml:lang="en">A web site that is relevant for the subject (any modelled class, including an ESCO concept or term).
+
+Such URL may be part literal content value of a description, a definition or a scope note.
+A relevant URI may be language specific (hence the range is literal).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </ns2:DatatypeProperty>
+  <ns2:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/mbox">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ns4:term_status>
+    <rdfs:label xml:lang="en">personal mailbox</rdfs:label>
+    <rdfs:comment xml:lang="en">A personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that  there is (across time and change) at most one individual that ever has any particular value for foaf:mbox.
+
+The used URI format is according http://tools.ietf.org/html/rfc6068: "mailto:...@..."</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </ns2:DatatypeProperty>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/Notation/ISCO88">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </rdfs:Datatype>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#topMember">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#member"/>
+    <rdfs:label xml:lang="en">has top member</rdfs:label>
+    <rdfs:comment xml:lang="en">Typically specified in case the subject collection is a concept group having a hierarchical representation (hierarchy based on broader/narrower). The referenced concepts are the hierarchical entry points of the concept group hierarchy.
+The top may be concepts as well as collections.</rdfs:comment>
+  </ns2:ObjectProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#isOptionalSkillFor">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:modified>
+    <rdfs:range>
+      <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b65">
+        <ns2:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Occupation"/>
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Skill"/>
+        </ns2:unionOf>
+      </ns2:Class>
+    </rdfs:range>
+    <ns2:inverseOf>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#relatedOptionalSkill">
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+        <rdfs:domain>
+          <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b62">
+            <ns2:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://data.europa.eu/esco/model#Occupation"/>
+              <rdf:Description rdf:about="http://data.europa.eu/esco/model#Skill"/>
+            </ns2:unionOf>
+          </ns2:Class>
+        </rdfs:domain>
+        <rdfs:label xml:lang="en">has optional skill</rdfs:label>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+        <rdfs:comment xml:lang="en">The ESCO skill or competence that is relevant (but optional) for the subject occuption.</rdfs:comment>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+      </ns2:ObjectProperty>
+    </ns2:inverseOf>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:comment xml:lang="en">The inverse of esco:relatedOptionalSkill.</rdfs:comment>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:issued>
+    <rdfs:label xml:lang="en">is optional skill for</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+  </ns2:ObjectProperty>
+  <ns2:FunctionalProperty rdf:about="http://data.europa.eu/esco/model#isTransversal">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">Typical to indicate that a concept (like a skill) is not job or sector specific.  It is cross sector.
+
+May also be applied (if unambiguous) to qualifications and occupations.
+
+Assertion (to 'true') is required in case transversality must be affirmed.
+
+Skill re-usability levels can be tagged in case the level implies transversal scope of the skills having the re-usability level.</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:domain>
+      <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b83">
+        <ns2:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Concept"/>
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#SkillReuseLevel"/>
+        </ns2:unionOf>
+      </ns2:Class>
+    </rdfs:domain>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:label xml:lang="en">is transversal</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </ns2:FunctionalProperty>
+  <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#isoCountryCodeA2">
+    <rdfs:label xml:lang="en">country code (A2)</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Country"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#NMTOKEN"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:comment xml:lang="en">ISO 3166 country code - A2</rdfs:comment>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+  </ns2:DatatypeProperty>
+  <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#referenceLanguage">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:comment xml:lang="en">Reference language for a concept.
+
+Typically set when the concept is first loaded with PT in (at least) 1 language.  (If multiple but not all languages are provided, the reference language must be uniquely set to one of the loaded languages.)
+
+In case the concept needs to be shown or translated in a new language (not having a PT yet), the label in the reference language is shown.</rdfs:comment>
+    <rdfs:label xml:lang="en">reference language</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+  </ns2:DatatypeProperty>
+  <ns2:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:comment xml:lang="en-us">Date of formal issuance (e.g., publication) of the resource.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">Date Issued</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+  </ns2:AnnotationProperty>
+  <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#isIndirect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:label xml:lang="en">is indirectly included</rdfs:label>
+    <rdfs:comment xml:lang="en">True: Indicates the subject concept (like a qualification) is not directly managed by ESCO. instead the concept is loaded into ESCO when it is provided by an external (typical national) body or agent.
+
+Could also be applied (if unambiguous) to skills and occupations.
+
+Assertion (to 'true') is required in case external contribution must be affirmed.</rdfs:comment>
+  </ns2:DatatypeProperty>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/Notation/EQF2012">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </rdfs:Datatype>
+  <ns2:FunctionalProperty rdf:about="http://data.europa.eu/esco/model#hasRelationshipList">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#Relationship"/>
+    <rdfs:seeAlso>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasRelationship">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:comment xml:lang="en">The detailed (typed, annotated and documented) ESCO relationship (see http://data.europa.eu/esco/model#Relationship) for the subject ESCO concept.
+
+The relationship identifies a related ESCO concept.
+The relationship properties provide formal semantics to the ESCO concept relationship.</rdfs:comment>
+        <ns2:inverseOf rdf:resource="http://data.europa.eu/esco/model#isRelationshipFor"/>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#Relationship"/>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+        <rdfs:label xml:lang="en">has ESCO relationship</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Relationship"/>
+      </ns2:ObjectProperty>
+    </rdfs:seeAlso>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-10-23</ns1:modified>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:comment xml:lang="en">The ordered set of relationships starting at the subject ESCO pillar concept.
+
+For any resource, every item in the list given as the value of the
+      esco:hasRelationshipList property is also a value of the esco:hasRelationship property.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-10-23</ns1:issued>
+    <rdfs:label xml:lang="en">has ESCO relationship list</rdfs:label>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+  </ns2:FunctionalProperty>
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/homepage">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ns4:term_status>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdfs:label xml:lang="en">homepage</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:comment xml:lang="en">A homepage</rdfs:comment>
+  </rdf:Property>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/Notation/eCF30">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </rdfs:Datatype>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#replaces">
+    <rdfs:comment xml:lang="en">Typical for a deprecated concept that replaces one or more other concepts.
+
+Should be made a sub-property of, or be replaced by: http://purl.org/dc/terms/replaces</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-17</ns1:issued>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:inverseOf>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#replacedBy">
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:label xml:lang="en">replaced by</rdfs:label>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <rdfs:subPropertyOf rdf:resource="http://data.europa.eu/esco/model#replacedByTransitive"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Typical for a deprecated concept that has been replaced by one or more other concepts.
+
+Should be made a sub-property of, or be replaced by: http://purl.org/dc/terms/isReplacedBy</rdfs:comment>
+      </ns2:ObjectProperty>
+    </ns2:inverseOf>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:label xml:lang="en">replaces</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-17</ns1:modified>
+    <rdfs:subPropertyOf>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#replacesTransitive">
+        <ns2:inverseOf rdf:resource="http://data.europa.eu/esco/model#replacedByTransitive"/>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-05-30</ns1:issued>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+        <rdfs:comment xml:lang="en">Typical for a chain of deprecated concepts that replaces one or more other concepts over more than one version.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-05-30</ns1:modified>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label xml:lang="en">transitively replaces</rdfs:label>
+      </ns2:ObjectProperty>
+    </rdfs:subPropertyOf>
+  </ns2:ObjectProperty>
+  <ns2:AnnotationProperty rdf:about="http://purl.org/dc/terms/description">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:comment xml:lang="en">An account of the resource.
+Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</rdfs:comment>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:label xml:lang="en">Description</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </ns2:AnnotationProperty>
+  <rdf:Description rdf:about="http://purl.org/iso25964/skos-thes#SimpleNonPreferredTerm">
+    <rdfs:comment xml:lang="en">By ESCO: Not directly set by ESCO applications, but inferred from the range of skos-xl:alt:Label.</rdfs:comment>
+  </rdf:Description>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/Notation/NUTS.regionCode">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </rdfs:Datatype>
+  <rdf:Description rdf:about="http://purl.org/iso25964/skos-thes#PreferredTerm">
+    <rdfs:comment xml:lang="en">By ESCO: Not directly set by ESCO applications, but inferred from the range of skos-xl:pref:Label or iso-thes:plusUse.</rdfs:comment>
+  </rdf:Description>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/Notation/NACEr2.code">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </rdfs:Datatype>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/Notation/ISCO08">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </rdfs:Datatype>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasLabelRole">
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#LabelRole"/>
+    <rdfs:comment xml:lang="en">A tagging concept providing the gender specific typing of an ESCO label.
+Each ESCO label can have
+- at most 1 label that is standard male and zero or more labels that are male
+- at most 1 label that is standard female and zero or more labels that are female
+- any label that is not male or female is considered neutral
+- a male respectively female preferred label is the standard male respectively standard female label
+</rdfs:comment>
+    <rdfs:label xml:lang="en">has label role</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Label"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns4:term_status>proposed</ns4:term_status>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+  </ns2:ObjectProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Language">
+    <rdfs:label xml:lang="en">Language</rdfs:label>
+    <rdfs:comment xml:lang="en">The class of language concepts.
+Each language is
+- labeled using skos:prefLabel in all of the other languages and
+- identified using the ESCO esco:language property (value = ISO 2-char language code).
+
+The class provides the set of languages that can be in use in the thesaurus.
+Two ESCO concept schemes provide language concepts:
+- http://data.europa.eu/esco/ConceptScheme/ISO639/cs - all languages of ISO 639-1 and ISO 639-2
+- http://data.europa.eu/esco/ConceptScheme/ISO639-3/cs - all sign languages listed in ISO 639-3
+
+The esco:ConceptScheme identifies the languages actually used via its property esco:supportedLanguage.</rdfs:comment>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b103">
+        <ns2:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:cardinality>
+        <ns2:onProperty rdf:resource="http://data.europa.eu/esco/model#language"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/model</rdfs:isDefinedBy>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+  </ns2:Class>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasFacet">
+    <rdfs:label xml:lang="en">has facet</rdfs:label>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-16</ns1:modified>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#FacetedConcept"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:comment xml:lang="en">A faceted ESCO concept (e.g.) is a compound concept constructed from an ESCO pillar concept and one or more facets.
+The typical example is the (foreign) language skills.
+- The ESCO concept is the skill: foreign language expertise.
+The facets are:
+  - the specific language of the expertise (en, fr, el, bg, nl ... )
+  - the skill levels defined by CEFR (writing, understanding interactively, ...).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </ns2:ObjectProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#undefinedOf">
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/model</rdfs:isDefinedBy>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+    <rdfs:label xml:lang="en">undefined skill of</rdfs:label>
+    <rdfs:seeAlso>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#undefined">
+        <ns3:historyNote xml:lang="en">Deprecated with Model version 1.</ns3:historyNote>
+        <rdfs:label xml:lang="en">undefined</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+        <ns3:changeNote xml:lang="en">ESCOv0 has 102K undefined relations.
+These cannot be inherited in v1 as occupations are redefined - maybe after merging a decision needs to be taken:
+- make relatedOptionalSkill
+- make relatedEssentialSkill
+- remove the related:undefined.</ns3:changeNote>
+        <rdfs:comment xml:lang="en">undefined skill is a skill that has no optional, recommended or required property assigned to it.</rdfs:comment>
+        <ns2:inverseOf rdf:resource="http://data.europa.eu/esco/model#undefinedOf"/>
+        <ns2:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:deprecated>
+      </ns2:ObjectProperty>
+    </rdfs:seeAlso>
+    <ns3:changeNote xml:lang="en">ESCOv0 has 102K undefined relations.  See http://data.europa.eu/esco/model#undefined.</ns3:changeNote>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns3:historyNote xml:lang="en">Deprecated with Model version 1.</ns3:historyNote>
+  </ns2:ObjectProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#memberOfGroup">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns2:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://data.europa.eu/esco/model#constructedFrom"/>
+      <rdf:Description rdf:about="http://data.europa.eu/esco/model#broaderInstance"/>
+      <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+    </ns2:propertyChainAxiom>
+    <rdfs:label xml:lang="en">containing group</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns2:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://data.europa.eu/esco/model#broaderInstance"/>
+      <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+    </ns2:propertyChainAxiom>
+    <rdfs:comment xml:lang="en">The ESCO Group (pillar) concept containing the subject ESCO concept as a member.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#MemberConcept"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#GroupConcept"/>
+  </ns2:ObjectProperty>
+  <ns2:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:comment xml:lang="en">An unambiguous reference to the resource within a given context.
+
+Recommended best practice is to identify the resource by means of a string conforming to a formal identification system.
+
+ESCO note:
+ESCO formats identiefers using
+{qualifier}:{identifier}
+
+{qualifier} is one of:
+CEFR: Common European Framework of Reference for Languages: Learning, Teaching, Assessment
+EQF: European Qualifications Framework identifer
+ISCED 2013 FoET: UNESCO ISCED 2013/FoET identifier for
+ESCO-CTC: Esco tool CTC
+ESCO ITM: ESCO TMS tool (ITM - from Mondeca)
+ESCO-TM: Esco tool for Text Mining
+ISO 3166-1.A2: 2 character ISO 3166 country code
+ISO 3166-1.A3: 3 character ISO 3166 country code
+ISO 3166-1.num: Numeric ISO 3166 country identifier
+ISO 639.1: The ISO 639-1 code (2 characters)
+ISO 639.2T: The ISO 639-2 terminological code (3 characters)
+ISO 639.2B: The ISO 639-2 bibliographic code (3 characters)
+ISO 639.3: The ISO 639-3 code (3 characters) – typical for use on sign languages
+NACE rev 2: NACE rev 2 industry sector identifiers
+NUTS 2008: The NUTS classification (Nomenclature of territorial units for statistics) is a hierarchical system for dividing up the economic territory of the EU</rdfs:comment>
+    <rdfs:label xml:lang="en">Identifier</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+  </ns2:DatatypeProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasRelationshipType">
+    <rdfs:label xml:lang="en">has ESCO relationship type</rdfs:label>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-16</ns1:modified>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns4:term_status>proposed</ns4:term_status>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#RelationshipType"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-16</ns1:issued>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Relationship"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdfs:comment xml:lang="en">A tagging concept detailing the type of the (subject) ESCO relationship</rdfs:comment>
+  </ns2:ObjectProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#constructedFrom">
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#MemberConcept"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:label xml:lang="en">constructed from ESCO concept</rdfs:label>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:modified>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:issued>
+    <rdfs:comment xml:lang="en">The unique (simple) ESCO concept used to construct the (subject) faceted ESCO concept.
+
+Example (started): Simple concept Teacher is specialized to identify teacher at different education levels.
+- The simple (member) occupation is: "Teacher"
+- Assume we have a classification of the levels of education (e.g. "primary school", "high school", "university")
+- The constructed faceted (member) concepts that will be:
+  "primary school teacher", "high school teacher" and "university teacher" (this last one occasionally re-labeled as "university professor")
+- Each of the constructed faceted (member) concepts will indicate the "teacher" also as a skos:broader concept.
+- Each of the constructed faceted (member) concepts will indicate the "teacher" as the esco:constructedFrom concept.
+
+Example (completed): Nesting facets - Teacher of a subject at a school level
+- Assume we have a classification of subjects of education (e.g. "mother tongue", "mathematics", "theorethical quantum mechanics").
+  Two facet groups are created for this facet (education subject):
+  1) Facet Group: Basic Education Subjects (with "mother tongue", "mathematics")
+  2) Facet Group: Advanced Education Subjects (with "mother tongue", "mathematics", "theorethical quantum mechanics")
+- The faceted concepts of the 'started' part of the example ("primary school teacher", "high school teacher", "university teacher")
+   can be further specialized with the 'Basic Education Subjects' or 'Advanced Education Subjects'.
+- The resulting constructed facets can be "high school teacher mathematics", "university teacher mathematics", "university teacher theorethical quantum mechanics", ...
+- The skos:broader for the new faceted concepts are:
+  1) for "university teacher mathematics" and for "university teacher theorethical quantum mechanics" : "university teacher"
+  2) for "high school teacher mathematics" : "high school teacher"
+  3) ...
+- Each of these (more) specialized faceted concepts all have the (simple) ESCO occupation "Teacher" as value for esco:constructedFrom</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#FacetedConcept"/>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#SimpleConcept"/>
+    <ns5:rule rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If:
+- FC esco:constructedFrom SC
+- FC esco:plusUF UF
+- lang(UF/xl:literalForm) = L
+- SC xl:prefLabel PLsc
+- lang(PLsc/xl:literalForm) = L
+Then
+- PLsc iso-thes:plusUFTerm UF
+- UF iso-thes:plusUseTerm PLsc</ns5:rule>
+  </ns2:ObjectProperty>
+  <ns2:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    <rdfs:comment xml:lang="en">Date on which the resource was changed.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:label xml:lang="en">Date Modified</rdfs:label>
+  </ns2:AnnotationProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#WorkContext">
+    <rdfs:label xml:lang="en">Work context</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:issued>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="en">The class of work contexts registered by ESCO
+A work context iIdentifies types of business, environmental conditions, types of product, etc.
+ESCO manages and organizes work context in the concept scheme: http://data.europa.eu/esco/ConceptScheme/WorkContext/cs
+</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:modified>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b90">
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/WorkContext/cs"/>
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#LabelRole">
+    <rdfs:label xml:lang="en">Label role</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns2:equivalentClass>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b101">
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/LabelRole"/>
+      </ns2:Restriction>
+    </ns2:equivalentClass>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:comment xml:lang="en">Allows to capture one or more particular characteristics of a name.
+
+Example usage: Gender related terms.
+- ESCO concepts may get a gender neutral term as preferred label.  The gender specific terms are provided as alternate labels.
+- Relevant use cases:
+  - concept look-up based on gender specific term
+  - Job posting generation with gender neutral terms
+  - CV generation with gender specific terms</rdfs:comment>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/model</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Skill">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdfs:label xml:lang="en">Skill</rdfs:label>
+    <rdfs:comment xml:lang="en">The class of ESCO Skill concepts.
+
+ESCO skills are sub-typed (e.g. to differentiate between knowledge and competence).
+This sub-typing is modelled using the concept scheme http://data.europa.eu/esco/ConceptScheme/SkillCompetenceType and its concept class http://data.europa.eu/esco/model#SkillCompetenceType
+
+ESCO skills are organized in accordance with their applicable re-use (potential) across the sectoral breakdown of occupations.
+Details are provided by https://ec.europa.eu/esco/escopedia/-/escopedia/Cross-sector_skills_and_competences?resetLanguage=true&amp;newLanguage=en.
+This organization is modelled using the concept scheme http://data.europa.eu/esco/ConceptScheme/SkillReuseLevel and its concept class http://data.europa.eu/esco/model#SkillReuseLevel
+ESCO skills with a different re-use applicability across sectors can be put in a hierarchical relation (skos:broader and skos:narrower) in acordance with the rules detailed by http://data.europa.eu/esco/model#SkillReuseLevel.
+
+Characteristics
+- An ESCO skill sub-type is given by http://data.europa.eu/esco/model#skillType
+- An ESCO skill re-use level is given by http://data.europa.eu/esco/model#skillReuseLevel
+
+An ESCO Skill may be related to other ESCO concepts.
+- Essential related concepts of class esco:Skills are indicated by http://data.europa.eu/esco/model#isEssentialSkillFor and http://data.europa.eu/esco/model#relatedEssentialSkill
+- Optional related concepts of class esco:Skills are indicated http://data.europa.eu/esco/model#isOptionalSkillFor and http://data.europa.eu/esco/model#relatedOptionalSkill
+- Related qualifications are given by http://data.europa.eu/esco/model#relatedQualification
+- Occupations a skill is essential for are concepts of type esco:Occupation indicated by http://data.europa.eu/esco/model#isEssentialSkillFor
+- Occupations a skill is optional for are concepts of type esco:Occupation indicated by http://data.europa.eu/esco/model#isEssentialSkillFor
+The property http://data.europa.eu/esco/model#hasRelationship details the relationships (see http://data.europa.eu/esco/model#Relationship)</rdfs:comment>
+    <ns3:definition xml:lang="en">A skill may also be an informal recognition of a competence.
+The recognition typically is obtained by experience, practice or informal tests.</ns3:definition>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b112">
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/ESCO_Skills"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns3:historyNote xml:lang="en">2013-06-27:
+A Skill that is a MemberConcept:
+- Initially (i.e. ESCOv0) coming from the Swedisch PES Skills tab in file Taxonomy 3 - Taxonomy db DB 20 l-corr.xls.
+- Initially (i.e. ESCOv0) linked as related concepts to leaf occupation groups as described in ISCO_SKILLS.xls.
+A Skill that is a GroupConcept:
+- Is created by ESCO</ns3:historyNote>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b113">
+        <ns2:onProperty rdf:resource="http://data.europa.eu/esco/model#skillReuseLevel"/>
+        <ns2:onClass rdf:resource="http://data.europa.eu/esco/model#SkillReuseLevel"/>
+        <ns2:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:maxCardinality>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#Qualification"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:seeAlso>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#skillType">
+        <rdfs:comment xml:lang="en">Type of competence (a tagging concept)</rdfs:comment>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <ns4:term_status>proposed</ns4:term_status>
+        <rdfs:label xml:lang="en">skill type</rdfs:label>
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#SkillCompetenceType"/>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+        <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+      </ns2:ObjectProperty>
+    </rdfs:seeAlso>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#SkillReuseLevel"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+  </ns2:Class>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#relatedLegallyRequiredQualification">
+    <rdfs:seeAlso>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#location">
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Location"/>
+        <ns4:term_status>released</ns4:term_status>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+        <rdfs:label xml:lang="en">location</rdfs:label>
+        <rdfs:comment xml:lang="en">The Country or region the subject is associated with.
+Typically a tagging concept.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+      </ns2:ObjectProperty>
+    </rdfs:seeAlso>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Qualification"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#Relationship"/>
+    <rdfs:label xml:lang="en">legally required qualification</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:comment xml:lang="en">The ESCO qualification (certification) that is legally required for the subject occupation or skill.
+Details for the requirements must be given in the relationship description.
+
+Occasionally, such a description must hold a hyperlink to the relevant professions database (e.g. http://ec.europa.eu/internal_market/qualifications/regprof/index.cfm?action=profession&amp;id_profession=12142).
+In case the legal requirement is region specific, the relationship:
+- should detail the restriction in the relation description
+- could be tagged with a location or NUTS code (see http://data.europa.eu/esco/model#location)</rdfs:comment>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:domain>
+      <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b77">
+        <ns2:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Occupation"/>
+          <rdf:Description rdf:about="http://data.europa.eu/esco/model#Skill"/>
+        </ns2:unionOf>
+      </ns2:Class>
+    </rdfs:domain>
+  </ns2:ObjectProperty>
+  <ns2:AnnotationProperty rdf:about="http://purl.org/dc/terms/rightsHolder">
+    <rdfs:comment xml:lang="en-us">A person or organization owning or managing rights over the resource.</rdfs:comment>
+    <rdfs:label xml:lang="en">owner</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:range rdf:resource="http://purl.org/dc/terms/Agent"/>
+    <rdfs:label xml:lang="en-us">Rights Holder</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+  </ns2:AnnotationProperty>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#hasNACECode">
+    <rdfs:label xml:lang="en">has NACE code</rdfs:label>
+    <rdfs:comment xml:lang="en">A tagging concept using the NACE codes to specify the industry sector of the tagged subject.</rdfs:comment>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#NACECode"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns4:term_status>proposed</ns4:term_status>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+  </ns2:ObjectProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Concept">
+    <rdfs:seeAlso>
+      <ns2:DatatypeProperty rdf:about="http://purl.org/iso25964/skos-thes#status">
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#statusDataType"/>
+      </ns2:DatatypeProperty>
+    </rdfs:seeAlso>
+    <ns2:disjointUnionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://data.europa.eu/esco/model#Occupation"/>
+      <rdf:Description rdf:about="http://data.europa.eu/esco/model#Skill"/>
+      <rdf:Description rdf:about="http://data.europa.eu/esco/model#Qualification"/>
+    </ns2:disjointUnionOf>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b91">
+        <ns2:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:minCardinality>
+        <ns2:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/modified"/>
+    <rdfs:comment xml:lang="en">The class of ESCO pillar concepts.
+
+ESCO pillar concepts are divided in tree semantic classes: esco:Occupation, esco:Skill and esco:Qualification, each organized in a dedicated ConceptScheme.
+
+All concepts are specializations of skos:Concept and are structured using the skos semantic relationships.
+- skos:mappingRelation is used to relate ESCO concepts to similar concepts in other concept schemes (e.g. ISCO-08 or ROME). The mapping to ISCO has particular business relevance and uses a special mapping sub-property (see http://data.europa.eu/esco/model#Occupation and  http://data.europa.eu/esco/model#memberOfISCOGroup).
+- sub-properties of skos:related are used to express special relations among ESCO pillar concepts. (e.g. http://data.europa.eu/esco/model#isEssentialSkillFor)
+- sub-properties of the DCMI dcterms:subject capture codified characteristics of ESCO concepts (e.g. http://data.europa.eu/esco/model#hasNACECode, http://data.europa.eu/esco/model#skillType).
+
+The skos:broader and skos:narrower concepts are the prime concepts organizing hierarchy among ESCO pillar concepts.
+The hierarchical structure is modelled according three classes
+- esco:GroupConcept (see http://data.europa.eu/esco/model#GroupConcept) - the top level concepts, only used for strucutring. These concepts typically are not relevant for annotating CV or job postings.
+- esco:LeafGroupConcept (see http://data.europa.eu/esco/model#LeafGroupConcept) - the lowest top level concept, a special esco:GroupConcept.
+- esco:MemberConccept (see http://data.europa.eu/esco/model#MemberConcept) - the concepts used for coding or annotating CV and Job Postings.
+
+The ESCO concepts are also divided according their analytical structure.  There are two sub-classes:
+- simple concepts (see http://data.europa.eu/esco/model#SimpleConcept) and
+- compound concepts (see http://data.europa.eu/esco/model#FacetedConcept).
+
+A concept specialized by faceted concepts holds the labels of each of the faceted concepts in the property http://data.europa.eu/esco/model#plusUF.  These labels are not synonyms or alternate labels.
+
+Among hierarchical related ESCO pillar concepts the following inheritance rules apply
+- the ESCO relationships from any broader transitive concept are inherited with the following restrictions
+  in case a relationship with the same skill is typed as well essential as optional, only the essential skill relationship is inherited
+  in case a relationship with the same qualification is typed as well required as legally required, only the legally required qualification relationship is inherited
+- the occasional tagging of the faceted concept (with NUTS, NACE, FoET, ISCO, SkillType, SkillReuseLevel ... codes) must be equal or more specific (specialized) than the code of any of its broader transitive ESCO concepts.
+
+The ESCO concepts are specializations of skos:Concepts and use skos:note specializations (see http://www.w3.org/2004/02/skos/core#note).
+- the skos:definition gives the full description of the ESCO concept.
+- the skos:scopeNote is the practical instruction for when to apply the ESCO concept.
+- the skos:historyNote gives a system log of significant versioned changes to the ESCO concept.
+- the skos:changeNote gives the human provided documentation for ESCO concept version modifications.
+
+Characteristics:
+- At the time of publication, the ESCO concepts are available in Icelandic and the official languages of the European Union, except Irish.  Per release, actual languages covered are provided by esco:supportedLanguage.  Some concepts are originally developped in a reference language.  This particular language is indicated by http://data.europa.eu/esco/model#referenceLanguage,
+- Any ESCO concept may refer relevant hyperlinked sources of reference or of information. See http://data.europa.eu/esco/model#relevantURL.
+
+Each ESCO pillar concept may hold provenance and audit metadata:
+- rightsHolder: the owner (http://purl.org/dc/terms/rightsHolder) - optional
+- editorial status (http://data.europa.eu/esco/model#editorialStatus) - required
+- publishing status (http://purl.org/iso25964/skos-thes#status) - required
+- creator : the author (http://purl.org/dc/terms/creator) - optional
+- contributor : modifier (http://purl.org/dc/terms/contributor) - required
+- modified : last modification date (http://purl.org/dc/terms/modified) - required</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#MemberConcept"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/rightsHolder"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#NACECode"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label xml:lang="en">ESCO pillar Concept</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#GroupConcept"/>
+    <rdfs:seeAlso>
+      <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#plusUF">
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+        <rdfs:label xml:lang="en">compound term</rdfs:label>
+        <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#SimpleConcept"/>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-18</ns1:modified>
+        <ns4:term_status>proposed</ns4:term_status>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm"/>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-18</ns1:issued>
+        <rdfs:comment xml:lang="en">A compound equivalence label for the subject concept.
+The subject concept is a Simple ESCO concept used as a component of a Faceted ESCO concept (i.e. a compound concept).
+The label of this faceted concept is a compound term (i.e. a split non preferred term) and the value of esco:plusUF (i.e. a UF++).
+There can be any number of compound terms per language and per faceted concept.</rdfs:comment>
+        <ns2:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+          <rdf:Description rdf:about="http://purl.org/iso25964/skos-thes#plusUFTerm"/>
+        </ns2:propertyChainAxiom>
+      </ns2:ObjectProperty>
+    </rdfs:seeAlso>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#Location"/>
+    <rdfs:seeAlso>
+      <ns2:DatatypeProperty rdf:about="http://data.europa.eu/esco/model#editorialStatus">
+        <rdfs:domain>
+          <ns2:Class rdf:nodeID="f43da625959cb4ff8937972534dd01451b80">
+            <ns2:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+              <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#Label"/>
+            </ns2:unionOf>
+          </ns2:Class>
+        </rdfs:domain>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-07-03</ns1:modified>
+        <rdfs:comment xml:lang="en">The business or editorial status of a concept or label</rdfs:comment>
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-07-03</ns1:issued>
+        <rdfs:range rdf:resource="http://data.europa.eu/esco/model#editorialStatusDataType"/>
+        <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+        <rdfs:label xml:lang="en">editorial status</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+      </ns2:DatatypeProperty>
+    </rdfs:seeAlso>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#LeafGroupConcept"/>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/model</rdfs:isDefinedBy>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#Language"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#SimpleConcept"/>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#FoETCode"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#EQFLevel"/>
+    <ns2:disjointUnionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://data.europa.eu/esco/model#FacetedConcept"/>
+      <rdf:Description rdf:about="http://data.europa.eu/esco/model#SimpleConcept"/>
+    </ns2:disjointUnionOf>
+    <rdfs:seeAlso>
+      <ns2:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator">
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
+        <rdfs:comment xml:lang="en-us">An entity primarily responsible for making the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:label xml:lang="en">Author</rdfs:label>
+        <ns1:description xml:lang="en-us">Examples of a Creator include a person, an organization, or a service.</ns1:description>
+      </ns2:AnnotationProperty>
+    </rdfs:seeAlso>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#FacetedConcept"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/subject"/>
+    <rdfs:seeAlso>
+      <ns2:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor">
+        <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+        <ns1:description xml:lang="en-us">Examples of a Contributor include a person, an organization, or a service.</ns1:description>
+        <rdfs:comment xml:lang="en-us">An entity responsible for making contributions to the resource.</rdfs:comment>
+        <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+        <rdfs:label xml:lang="en">Contributor</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/Agent"/>
+      </ns2:AnnotationProperty>
+    </rdfs:seeAlso>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Qualification">
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:comment xml:lang="en">The class of ESCO qualifications.
+An ESCO qualification is an ESCO concepts of the ESCO qualification pillar.
+
+A qualification is an official or formal certificaton of one or more aquired skills or competences (i.e the learning outcomes - see http://data.europa.eu/esco/model#relatedCompetence).
+
+An qualification may be related to
+- esco:Skill (see http://data.europa.eu/esco/model#relatedEssentialSkill and http://data.europa.eu/esco/model#relatedOptionalSkill)
+- esco:Occupation (see http://data.europa.eu/esco/model#relatedQualification and http://data.europa.eu/esco/model#relatedLegallyRequiredQualification)
+The property http://data.europa.eu/esco/model#hasRelationship details the relationships (see http://data.europa.eu/esco/model#Relationship)
+
+Characteristics of a qualification
+- The certificate is issued by an awarding body (see http://data.europa.eu/esco/model#hasAwardingBody).
+- The level of the qualification may be expressed according the European Qualification Framework (see http://data.europa.eu/esco/model#hasEQFLevel).
+- The subject area of the qualification may be expressed according the UNESCO Institute of Statistics standard for the Fields of Education and Training (FoET - ISCED, see http://data.europa.eu/esco/model#hasFoETCode)
+- The property http://data.europa.eu/esco/model#expirationPeriod indicates the qualification is limited for a period of time.  Such a limitation may be provided in a descriptive way using the qualification description (see http://www.w3.org/2004/02/skos/core#definition)
+- The value 'true' of the boolean flag http://data.europa.eu/esco/model#isIndirect indicates the Qualifications is not managed by ESCO but represented by ESCO based on an external source (e.g. national qualifications).</rdfs:comment>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b107">
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/ESCO_Qualifications"/>
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b106">
+        <ns2:onProperty rdf:resource="http://data.europa.eu/esco/model#expirationPeriod"/>
+        <ns2:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:maxQualifiedCardinality>
+        <ns2:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdfs:label>Qualification</rdfs:label>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Occupation">
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#memberOfISCOGroup"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <ns3:historyNote xml:lang="en">2013-06-27
+An Occupation that is a MemberConcept:
+- Initially coming from the Occupations listed by the Swedisch PES in tab of file Taxonomy 3 - Taxonomy db DB 20 l-corr.xls.
+An Occupation that is a GroupConcept:
+- Initially coming from the file ISCO '88 codes 25l.xls</ns3:historyNote>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#hasNACECode"/>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b105">
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/ESCO_Occupations"/>
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#Qualification"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#hasRelationship"/>
+    <rdfs:label xml:lang="en">Occupation</rdfs:label>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#location"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:comment xml:lang="en">The class of ESCO Occupation concepts. An Occuaption is an ESCO pillar concept (see http://data.europa.eu/esco/model#Concept).
+Occupation have an broader match relation to an ISCO level 4 code (see http://data.europa.eu/esco/model#memberOfISCOGroup).
+
+Characteristics of an Occupation:
+- The relevant industry sector for an occupation is given by the Eurostat NACE codes (see http://data.europa.eu/esco/model#hasNACECode)
+- The different Work context applicable for an occupation (see http://data.europa.eu/esco/model#hasWorkContext).
+
+An occupation may be related to
+- esco:Skill (see http://data.europa.eu/esco/model#relatedEssentialSkill and http://data.europa.eu/esco/model#relatedOptionalSkill)
+- esco:Qualification (see http://data.europa.eu/esco/model#relatedQualification and http://data.europa.eu/esco/model#relatedLegallyRequiredQualification)
+
+Occupations having a legal or other regulations in a specific region
+- must identify these regulations in the occupation definition (and refer the professional DB stating that regulation - e.g. http://ec.europa.eu/internal_market/qualifications/regprof/index.cfm?action=profession&amp;id_profession=12142)
+- could identify such a region with the location property (see http://data.europa.eu/esco/model#location)
+
+ESCO Occupations are maintained in the ESCO concept scheme http://data.europa.eu/esco/ConceptScheme/ESCO_Occupations.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#SkillReuseLevel">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-05</ns1:issued>
+    <ns2:equivalentClass>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b115">
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/SkillReuseLevel"/>
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+      </ns2:Restriction>
+    </ns2:equivalentClass>
+    <rdfs:label xml:lang="en">Skill reuse level</rdfs:label>
+    <rdfs:comment xml:lang="en">Re-usability level of a Skill or competence.
+Details are provided by the ESCOpedia article on Cross-sector skills and competences (see https://ec.europa.eu/esco/escopedia/-/escopedia/Cross-sector_skills_and_competences?resetLanguage=true&amp;newLanguage=en")
+
+The concept hierarchy in the Skill Reuse Level concept scheme (http://data.europa.eu/esco/ConceptScheme/SkillReuseLevel) must detail the allowed skill hierarchy.
+A skill with re-use level A can only be a broader of a skill with reuse level B if either of the following holds:
+- reuse level A = reuse level B
+- reuse level A is a broader transitive of reuse level B.
+A skill can have at most one re-use level (see http://data.europa.eu/esco/model#Skill).</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-06-05</ns1:modified>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://purl.org/dc/terms/Agent">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns1:description xml:lang="en-us">Examples of Agent include person, organization, and software agent.</ns1:description>
+    <rdfs:comment xml:lang="en-us">A resource that acts or has the power to act.</rdfs:comment>
+    <rdfs:label xml:lang="en">Agent (DCMI)</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</ns1:issued>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#AwardingBody">
+    <rdfs:label xml:lang="en">Awarding body</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#Qualification"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:comment xml:lang="en">The class of awarding bodies registered by ESCO.
+
+An ESCO registered awarding body is an official or otherwise recognized institution, organization or company that is issuing formal certificates of competence.  Some of these certificates are registered as ESCO qualifications (see http://data.europa.eu/esco/model#Qualification).  The relationship between an esco:Qualification and an esco:AwardingBody is given by http://data.europa.eu/esco/model#hasAwardingBody.
+
+The geo-location(s) of an awarding body is given by http://data.europa.eu/esco/model#location</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b89">
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/AwardingBodies/cs"/>
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdfs:comment xml:lang="en">A person.</rdfs:comment>
+    <ns2:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ns4:term_status>
+  </ns2:Class>
+  <ns2:ObjectProperty rdf:about="http://data.europa.eu/esco/model#refersConcept">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:comment xml:lang="en">The ESCO concept referred by the (subject) ESCO relationship.
+The esco:Relationship gives a more elaborate semantic description of related ESCO concepts.  These related concepts are identied by the esco:Relationship propertief
+- esco:isRelationshipFor
+- esco:refersConcept
+Further semantics are provided by
+- a relationshipt type
+- a description
+- .. (other possible extensions)</rdfs:comment>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Relationship"/>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:modified>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:label xml:lang="en">to ESCO concept</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+  </ns2:ObjectProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#LeafGroupConcept">
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/esco/model#GroupConcept"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:label xml:lang="en">Leaf-group concept</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#MemberConcept"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:comment xml:lang="en">A Group (or aggregation) concept, having no sub-groups anymore.
+
+Narrower concepts only can be members (or narrower instances) of the group concept.
+The specialization http://data.europa.eu/esco/model#narrowerInstance of skos:narrower is used to identify the top level members of the group.</rdfs:comment>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Location">
+    <rdfs:comment xml:lang="en">A teritorial area like a federation, a country, a region, a jurisdiction area.
+
+Standards useful for locations and regions:
+- ISO 3166
+- NUTS - http://epp.eurostat.ec.europa.eu/portal/page/portal/nuts_nomenclature/introduction (extends ISO 3166 with sub-regions)
+- geonames - http://www.geonames.org/ (includes ISO 3166)
+- EU publication Office - http://publications.europa.eu/mdr/authority/country/index.html</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-05</ns1:modified>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:label xml:lang="en">Location</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </ns2:Class>
+  <ns2:FunctionalProperty rdf:about="http://data.europa.eu/esco/model#skillReuseLevel">
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#SkillReuseLevel"/>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Skill"/>
+    <rdfs:comment xml:lang="en">Reuseability level of a skill</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-06-05</ns1:issued>
+    <rdfs:label xml:lang="en">skill reuseability level</rdfs:label>
+    <ns4:term_status>proposed</ns4:term_status>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-06-05</ns1:modified>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+  </ns2:FunctionalProperty>
+  <ns2:FunctionalProperty rdf:about="http://data.europa.eu/esco/model#isRelationshipFor">
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:label xml:lang="en">from ESCO concept</rdfs:label>
+    <rdfs:range rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:domain rdf:resource="http://data.europa.eu/esco/model#Relationship"/>
+    <rdfs:comment xml:lang="en">The ESCO concept the (subject) relationship starts from (see http://data.europa.eu/esco/model#Relationship).</rdfs:comment>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+  </ns2:FunctionalProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Label">
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#hasLabelRole"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/modified"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/rightsHolder"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/model</rdfs:isDefinedBy>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:label xml:lang="en">ESCO pillar concept Label</rdfs:label>
+    <rdfs:comment xml:lang="en">The class of labels used on esco pillar Concepts.
+
+Characteristics
+- An ESCO label may be motivated by relevant original sources.  These sources are referenced uising http://data.europa.eu/esco/model#relevantURL
+- An ESCO label typically gets label roles detailing the gender specific characteristics of the label (see http://data.europa.eu/esco/model#hasLabelRole)
+
+Provenance information that may be added:
+- rightsHolder: the owner (http://purl.org/dc/terms/rightsHolder) - optional
+- editorial status (http://data.europa.eu/esco/model#editorialStatus) - optional
+- workflow status (http://data.europa.eu/esco/flow#status) - required
+- creator : the author (http://purl.org/dc/terms/creator) - optional
+- contributor : modifier (http://purl.org/dc/terms/contributor) - required
+- modified : last modification date (http://purl.org/dc/terms/modified) - required</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/flow#status"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/creator"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/contributor"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#MemberConcept">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b104">
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+        <ns2:allValuesFrom rdf:resource="http://data.europa.eu/esco/model#LeafGroupConcept"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#LeafGroupConcept"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#GroupConcept"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:comment xml:lang="en">Concepts of this class are specifically used to be referenced in CV or job postings.  Typically these concepts are at the more specialized levels of the hierarchy.
+Example: A particular occupation, not a group of occupations.
+These concepts in general have
+- (1) a http://data.europa.eu/esco/model#broaderInstance relationship to http://data.europa.eu/esco/model#LeafGroupConcept
+- (2) one or more http://data.europa.eu/esco/model#memberOfGroup relationships to http://data.europa.eu/esco/model#GroupConcept
+However, some Member concept may be specializations of other ones.  In general these specializations will not comply to (1). General group membership within ESCO pillars is provided by esco:memberOfGroup.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:label>Member concept</rdfs:label>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#FacetedConcept">
+    <rdfs:comment xml:lang="en">The class of compound ESCO pillar concepts.
+A compound concept is a concept that is broken down in a set of mare basic component concepts  (e.g. a pianist is a 'musician' performing on a 'piano')
+
+An ESCO concept is either a faceted concept or a simple concept (see http://data.europa.eu/esco/model#SimpleConcept).
+
+An ESCO faceted (or compound) concept is the specialization of an ESCO concept that identifies one or more specialization facets (see http://data.europa.eu/esco/model#facet).
+A specializing facet is a group of concepts with a common characteristic (e.g. the group of music instruments).
+The specialization makes a compound of the ESCO concept and of one concept of each of its related specializing  facets.
+
+- During the editorial phase, one or more faceted concepts may be created ad hoc by the ESCO taxonomists.
+- During the ESCO publishing phase all possible faceted concepts are generated by the publication process.  The process adds the possible compound conepts that were not created by the (human) taxonomist.
+- Each faceted concept is the specialization (i.e. the skos:narrowerTransitive) of an ESCO simple concept (see http://data.europa.eu/esco/model#constructedFrom)
+- All facet componets (i.e. the facet values) of the faceted conept are given by the property http://data.europa.eu/esco/model#hasFacet
+
+Uniqueness rule:
+Two instances of esco:FacetedConcept are the same if and only if both instances
+- refer the same simple ESCO concept using http://data.europa.eu/esco/model#constructedFrom
+- refer the same set of components (facet values) using http://data.europa.eu/esco/model#hasFacet
+
+The faceted concept inherits certain characteristics from the Simple Concept it is constructed from:
+- the ESCO pillar type (Occupation, Skill or Qualification) of its simple concept it is constructed from (see esco:constructedFrom).
+- the memberOfISCOGroup of the occasional Occupation it is constructed from
+- the skillType and the skillReuseLevel of the occasional Skill it is constructed from
+Further, inheritance rules apply as on ESCO concepts (see http://data.europa.eu/esco/model#Concept).</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:modified>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b110">
+        <ns2:onClass rdf:resource="http://data.europa.eu/esco/model#SimpleConcept"/>
+        <ns2:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:qualifiedCardinality>
+        <ns2:onProperty rdf:resource="http://data.europa.eu/esco/model#constructedFrom"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns3:editorialNote xml:lang="en">
+The preferred label of a Faceted concept need not be persisted in the editorial system. It may be automatically constructed on publishing as follows:
+   {FacetedConcept prefLabel} :=  {SimpleConcept prefLabel} + ': ' + {facet prefLabel}  (  ' / ' + {facet prefLabel} ) *
+   where facet prefLabels are ordered alhabetically.
+   The (gender related) label roles are inherited from the prefered label of the SimplConcept.
+Occasionally the automated pref label will be overruled by a compound label.</ns3:editorialNote>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b111">
+        <ns2:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:onProperty rdf:resource="http://data.europa.eu/esco/model#hasFacet"/>
+        <ns2:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:minCardinality>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:issued>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#SimpleConcept"/>
+    <rdfs:label xml:lang="en">Faceted ESCO concept</rdfs:label>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Relationship">
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#refersConcept"/>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b109">
+        <ns2:onProperty rdf:resource="http://data.europa.eu/esco/model#refersConcept"/>
+        <ns2:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:qualifiedCardinality>
+        <ns2:onClass rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#relatedLegallyRequiredQualification"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#isRelationshipFor"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:label xml:lang="en">ESCO concepts Relationship</rdfs:label>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b108">
+        <ns2:onClass rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+        <ns2:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:qualifiedCardinality>
+        <ns2:onProperty rdf:resource="http://data.europa.eu/esco/model#isRelationshipFor"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#hasRelationshipType"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">approved</ns4:term_status>
+    <rdfs:comment xml:lang="en">The class of directed relationships between two ESCO Pillar concepts (e.g. between an esco:Occupation and an esco:Qualification).
+
+The relationship:
+- starts from the ESCO concept identified by http://data.europa.eu/esco/model#isRelationshipFor.
+- is detailed using a descriptive text (http://purl.org/dc/terms/description).  This description may contain reference to external sources (see http://data.europa.eu/esco/model#relatedLegallyRequiredQualification)
+- ends in the ESCO concept identified by http://data.europa.eu/esco/model#refersConcept.
+- is typed by the tagging property http://data.europa.eu/esco/model#hasRelationshipType.
+A relationship may be industry sector or location specific. This can be acieved by tagging the relationship using esco:hasNACECode or esco:location respectively.</rdfs:comment>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-10</ns1:modified>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#FoETCode">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:comment xml:lang="en">The class of ISCED 2013/FoET classificaton code (International Standard Classification of Education: Fields of Education and Training 2013)
+
+The Fields of Education and Training have been submitted to the UNESCO Conference - session 37 - Paris.
+The version submitted for resolution is available from: http://unesdoc.unesco.org/images/0022/002218/221863e.pdf
+
+Other original source references:
+- http://www.uis.unesco.org/Education/Documents/isced-37c-fos-review-222729e.pdf
+- http://www.uis.unesco.org/EDUCATION/Pages/international-standard-classification-of-education.aspx</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:label xml:lang="en">FoET code</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:seeAlso rdf:resource="http://unesdoc.unesco.org/images/0022/002218/221863e.pdf"/>
+    <rdfs:seeAlso rdf:resource="http://www.uis.unesco.org/EDUCATION/Pages/international-standard-classification-of-education.aspx"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#GroupConcept">
+    <rdfs:comment xml:lang="en">Concepts
+ of this type are aggregations.  The property http://data.europa.eu/esco/model#hasGroupMember gives the members concepts of the group.  The member concepts have type http://data.europa.eu/esco/model#MemberConcept.  These member concepts are skos:narrowerTransitive spcializations of the group concept.  Among GroupConcept, the skos:broader/skos:narrower is like a super-group/sub-group relation meaning that all members of the (narrower) sub-group also are members of the (broader) super-group.
+
+Typically these group concepts are NOT used in CV or job postings, but serve organization, reporting and statiscal purposes.
+The member concepts of group concepts are used for coding or annotating CV or job postings.
+
+A Group concept typically will be
+- in the upper levels of an ESCO pillar (or concept schema)
+- in an external concept schema (e.g. ISCO)</rdfs:comment>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b99">
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+        <ns2:allValuesFrom rdf:resource="http://data.europa.eu/esco/model#GroupConcept"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:seeAlso xml:lang="en"></rdfs:seeAlso>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <ns2:disjointWith rdf:resource="http://data.europa.eu/esco/model#MemberConcept"/>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b100">
+        <ns2:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns2:maxCardinality>
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#notation"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:label xml:lang="en">Group concept</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#FacetConceptGroup">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#SimpleConcept"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:label xml:lang="en">Facet concept group</rdfs:label>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:subClassOf>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b97">
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/FacetConceptGroups"/>
+      </ns2:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#facet"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#FacetedConcept"/>
+    <rdfs:comment xml:lang="en">A Facet concept group (i.e. an instance of the class esco:FacetConceptGroup) is a sub-set of concepts from a facet.
+A facet is a supporting taxonomy for ESCO.  Examples are:
+- Languages
+- Species
+- Tools
+
+An (instance of the) esco:FacetConceptGroup is a sub-set of concepts from a facet.
+Each esco:FacetConceptGroup is defined by the ESCO concept scheme http://data.europa.eu/esco/ConceptScheme/FacetConceptGroups.
+The typical use of an esco:FacetConceptGroup is to specialize one or more ESCO pillar concepts. (see http://data.europa.eu/esco/model#facet).
+The specialization creates narrower (or transitive narrower) concepts of the specialized ESCO pillar concept.
+Each specialization is a Faceted (or compound) concept (with type http://data.europa.eu/esco/model#FacetedConcept) having as component concepts:
+- the ESCO pillar object being specialized and
+- one member concept from the facet group.
+
+An ESCO pillar concept is either an esco:SimpleConcept or an esco:FacetedConcept
+
+An ESCO concept can be specialized in different ways using different Facet concept groups
+
+The Facet concept group may be structured:
+- members of an esco:FacetConceptGroup can have hierarchical relationships (skos:broader and skos:narrower) among its member concepts.
+  If this is the case, the hierarchical structure among the specialized concepts constructed with this facet group will mirror the hierarchy of the facet group.
+  See also skos:topMember.
+- an esco:FacetConceptGroup can be an oredered collection.
+  In this case, the order among the spicialized concepts constructed with this facet group will mirror the order of the facet group.
+- an esco:FacetConceptGroup can have different sub-collections (i.e. have skos:member that are a skos:Collection and an iso-thes:ThesaurusArray).
+  Collections only serve to organize the constructed faceted concepts such that the faceted concepts
+  that are specializations based on the structured Facet concept group are organized by thesaurus arrays
+  that each mirror an original thesaurus array of the Facet concept group.
+
+Example: the language FacetConceptGroup can have as members
+- the (possibly ordered) collection of spoken languages
+  having as members the language concepts
+- the (possibly ordered) collection of sign languages
+  having as members the sign language concepts
+
+The name of the facet group is given by skos:prefLabel</rdfs:comment>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#NACECode">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:seeAlso rdf:resource="http://ec.europa.eu/eurostat/ramon/rdfdata/nace_r2.rdf"/>
+    <rdfs:comment xml:lang="en">Industry sector code NACE rev2
+
+The NACE codes are published in http://epp.eurostat.ec.europa.eu/cache/ITY_OFFPUB/KS-RA-07-015/EN/KS-RA-07-015-EN.PDF
+The RDF version is available from: http://ec.europa.eu/eurostat/ramon/rdfdata/nace_r2.rdf - Note, this is not SKOS but can be made SKOS compliant.
+ESCO keeps a SKOS compliant copy of NACE codes. These are organized in the concept scheme http://data.europa.eu/esco/ConceptScheme/NACErev2/cs</rdfs:comment>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-05</ns1:issued>
+    <rdfs:seeAlso rdf:resource="http://epp.eurostat.ec.europa.eu/cache/ITY_OFFPUB/KS-RA-07-015/EN/KS-RA-07-015-EN.PDF"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-05</ns1:modified>
+    <rdfs:label xml:lang="en">NACE code</rdfs:label>
+  </ns2:Class>
+  <ns2:FunctionalProperty rdf:about="http://data.europa.eu/esco/model#language">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">The language of the subject resource.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:label xml:lang="en">language</rdfs:label>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:modified>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
+    <ns3:changeNote xml:lang="en">ESCO v0 -&gt; ESCO v1 literals having XMLLiteral parsetype are now coded as pllain literal with mark-up escaped.  Hence the standard RDF language tagging of literals can be used.
+see http://data.europa.eu/esco/model#noteLiteral</ns3:changeNote>
+  </ns2:FunctionalProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#SkillCompetenceType">
+    <rdfs:comment xml:lang="en">Sub-Typing of a Skill Concept:
+- Skill/Competence
+- Knowledge</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:equivalentClass>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b114">
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/SkillCompetenceType"/>
+      </ns2:Restriction>
+    </ns2:equivalentClass>
+    <rdfs:label xml:lang="en">Competence sub-type</rdfs:label>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:issued>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#Country">
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/esco/model#Location"/>
+    <rdfs:label xml:lang="en">Country</rdfs:label>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:comment xml:lang="en">Relevant standards for country locations are documented under the super class: http://data.europa.eu/esco/model#Location</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns4:term_status>
+  </ns2:Class>
+  <rdf:Description rdf:about="http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm">
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#FacetedConcept"/>
+    <rdfs:comment xml:lang="en">By ESCO: Captures the compound terms established by the ESCO taxonomists.</rdfs:comment>
+  </rdf:Description>
+  <ns2:TransitiveProperty rdf:about="http://data.europa.eu/esco/model#replacedByTransitive">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-05-30</ns1:modified>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">transitive replaced by</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-05-30</ns1:issued>
+    <rdfs:comment xml:lang="en">Typical for a chain of changes and deprecations of a concept over different versions.</rdfs:comment>
+  </ns2:TransitiveProperty>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#SimpleConcept">
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:issued>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <rdfs:subClassOf rdf:resource="http://data.europa.eu/esco/model#Concept"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#facet"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-03</ns1:modified>
+    <rdfs:label xml:lang="en">Simple ESCO concept</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://data.europa.eu/esco/model#FacetedConcept"/>
+    <rdfs:comment xml:lang="en">The class of simple ESCO concepts.
+
+A simple ESCO concept is not decomposed into components (for compound ESCO concepts see http://data.europa.eu/esco/model#FacetedConcept).
+A simple concept may be further specialized by faceted concepts.  The facets used for this specialization are represented by the property http://data.europa.eu/esco/model#facet.</rdfs:comment>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ns4:term_status>
+    <rdfs:comment xml:lang="en">An organization.</rdfs:comment>
+    <ns2:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#ConceptScheme">
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/model</rdfs:isDefinedBy>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+    <rdfs:label xml:lang="en">Concept scheme (ESCO pillar)</rdfs:label>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/modified"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/iso25964/skos-thes#status"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/rightsHolder"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/creator"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/dc/terms/contributor"/>
+    <rdfs:comment xml:lang="en">The ESCO concept schemes (pillars)
+
+The "current" ESCO scheme and historic versions of the ESCO scheme will be instances of this class.  Typically, these support poly-hierarchy.
+
+The ISCO representations that are the backbone of at least one ESCO version (v0) also will be represented by this concept scheme.  Typically these do not have poly-hierarchy.
+As of ESCO v1 though, ISCO is not a part anymore of the ESCO hierarchy.  However, the ESCO v0 part corresponding to ISCO08 will be maintained a a separate versioned taxonomy.
+ESCO v1 occupations will be mapped (see http://data.europa.eu/esco/model#memberOfISCOGroup a sub-property of http://www.w3.org/2004/02/skos/core#broadMatch) to ISCO (level 4) concepts.
+
+Provenance information that may be added:
+- rightsHolder: the owner (http://purl.org/dc/terms/rightsHolder) - required
+- publishing status: (http://purl.org/iso25964/skos-thes#status) - required
+- creator : the author (http://purl.org/dc/terms/creator) - required
+- contributor : modifier (http://purl.org/dc/terms/contributor) - required
+- modified : last modification date (http://purl.org/dc/terms/modified) - required</rdfs:comment>
+  </ns2:Class>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/model#statusDataType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thesaurus concept and label publaction status type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013-12-05</ns1:modified>
+    <ns2:equivalentClass>
+      <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b1">
+        <ns2:unionOf rdf:parseType="Collection">
+          <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b3">
+            <ns2:withRestrictions rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b5">
+                <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete</xsd:pattern>
+              </rdf:Description>
+            </ns2:withRestrictions>
+            <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+          </rdfs:Datatype>
+          <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b7">
+            <ns2:withRestrictions rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b9">
+                <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</xsd:pattern>
+              </rdf:Description>
+            </ns2:withRestrictions>
+            <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+          </rdfs:Datatype>
+          <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b11">
+            <ns2:withRestrictions rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b13">
+                <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">to be reviewed</xsd:pattern>
+              </rdf:Description>
+            </ns2:withRestrictions>
+            <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+          </rdfs:Datatype>
+        </ns2:unionOf>
+      </rdfs:Datatype>
+    </ns2:equivalentClass>
+    <rdfs:comment xml:lang="en">list of status values used for managing ESCO release status.
+On creation of a concept or label, the default state is "to be reviewed"
+On deprecation of a concept the concept state becomed "obsolete"
+When a wrongly deprecated concept is revived, the state becomes "to be reviewed"
+When the thesaurus is published, the statuss becomes "released"
+
+All state changes are system managed.</rdfs:comment>
+    <ns4:term_status>proposed</ns4:term_status>
+  </rdfs:Datatype>
+  <ns2:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ns4:term_status>
+    <rdfs:label xml:lang="en">Agent (foaf)</rdfs:label>
+    <rdfs:comment xml:lang="en">An agent (eg. person, group, software or physical artifact).
+
+Agent characteristics used by ESCO:
+- The (full and formal) name of the agent (required) - see http://xmlns.com/foaf/0.1/name
+- The short name or nickname of the agent (optional) - see http://xmlns.com/foaf/0.1/nick
+- The phone number(s) of the agent (optional) - see http://xmlns.com/foaf/0.1/phone
+- The home page of the agent (optional) - see http://xmlns.com/foaf/0.1/homepage
+- The e-mail of the agent (optional) - see http://xmlns.com/foaf/0.1/mbox
+
+Some Agent may represent groups. Group members are listed using http://xmlns.com/foaf/0.1/member
+</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <ns2:equivalentClass rdf:resource="http://purl.org/dc/terms/Agent"/>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://xmlns.com/foaf/0.1/Group">
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stable</ns4:term_status>
+    <rdfs:comment xml:lang="en">A class of Agents.
+Group members are listed using http://xmlns.com/foaf/0.1/member</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:label xml:lang="en">Group</rdfs:label>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#RelationshipType">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-16</ns1:modified>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:equivalentClass>
+      <ns2:Restriction rdf:nodeID="f43da625959cb4ff8937972534dd01451b102">
+        <ns2:hasValue rdf:resource="http://data.europa.eu/esco/ConceptScheme/RelationshipType"/>
+        <ns2:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+      </ns2:Restriction>
+    </ns2:equivalentClass>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://data.europa.eu/esco/model</rdfs:isDefinedBy>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-04-16</ns1:issued>
+    <rdfs:label xml:lang="en">ESCO relationship type</rdfs:label>
+    <rdfs:comment xml:lang="en">The class of the types of ESCO relations.
+The concepts having this type are managed in the small SKOS taxonomy (see http://data.europa.eu/esco/ConceptScheme/RelationshipType).</rdfs:comment>
+  </ns2:Class>
+  <rdfs:Datatype rdf:about="http://data.europa.eu/esco/model#editorialStatusDataType">
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013-12-05</ns1:modified>
+    <rdfs:comment xml:lang="en">list of status values used for managing ESCO vocabulary changes.
+The editorial status is only managed by a human with the role of taxonomy editor.
+
+On creation, the default status is "prepared".  The label or concept is considered not final.
+When finalizing the business releaavance and the related editorial review process, the status can be set to "proposed".
+After a formal validation process by the business, the status can be set to approved.
+When a review considers the label or concept not relevant any more, the publication status is (automatically) set to "obsolete" by the relevant deprecation action.
+</rdfs:comment>
+    <ns4:term_status>proposed</ns4:term_status>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns2:equivalentClass>
+      <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b14">
+        <ns2:unionOf rdf:parseType="Collection">
+          <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b16">
+            <ns2:withRestrictions rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b18">
+                <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prepared</xsd:pattern>
+              </rdf:Description>
+            </ns2:withRestrictions>
+            <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+          </rdfs:Datatype>
+          <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b20">
+            <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <ns2:withRestrictions rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b22">
+                <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</xsd:pattern>
+              </rdf:Description>
+            </ns2:withRestrictions>
+          </rdfs:Datatype>
+          <rdfs:Datatype rdf:nodeID="f43da625959cb4ff8937972534dd01451b24">
+            <ns2:withRestrictions rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="f43da625959cb4ff8937972534dd01451b26">
+                <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">approved</xsd:pattern>
+              </rdf:Description>
+            </ns2:withRestrictions>
+            <ns2:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+          </rdfs:Datatype>
+        </ns2:unionOf>
+      </rdfs:Datatype>
+    </ns2:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thesaurus concept and label editorial status type</rdfs:label>
+  </rdfs:Datatype>
+  <ns2:Class rdf:about="http://data.europa.eu/esco/model#EQFLevel">
+    <rdfs:comment xml:lang="en">The EQF levels have been published as recommendation by the EU Publication office under CELEX number 32008H0506(01)
+ See http://publications.europa.eu/resource/celex/32008H0506%2801%29</rdfs:comment>
+    <ns3:changeNote xml:lang="en">URI of  ESCO copy of EQF will need to be updated in order to get LOD properly working from ESCO platform.</ns3:changeNote>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns4:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns4:term_status>
+    <rdfs:seeAlso rdf:resource="http://publications.europa.eu/resource/celex/32008H0506%2801%29"/>
+    <rdfs:label xml:lang="en">Level (European Qualification Framework)</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://data.europa.eu/esco/model"/>
+    <ns1:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-06-27</ns1:issued>
+    <ns1:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-03</ns1:modified>
+  </ns2:Class>
+  <ns2:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+    <rdfs:comment xml:lang="en">All ESCO published taxonomies.
+- either external but having a skossified clone on the ESCO platform,
+- or constructed within ESCO
+These concept schemes have as base URI: http://data.europa.eu/esco/ConceptScheme/
+
+A skossified clone will only be maintained for external taxonomies that are not available as LOD.</rdfs:comment>
+  </ns2:Class>
+</rdf:RDF>
